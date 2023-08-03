@@ -70,6 +70,19 @@
       </div>
     </nav>
 
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success, Your Image has been Processed!</strong> {{ message | safe
+      }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
     <div class="container my-4">
       <h1 class="fs-2">Editopia</h1>
 
@@ -78,16 +91,20 @@
           <label for="formFile" class="form-label"
             >Select in Image to Edit</label
           >
-          <input class="form-control" type="file" id="formFile" />
+          <input class="form-control" type="file" name="file" id="formFile" />
         </div>
         <div class="mb-3">
           <div class="form-floating">
-            <select class="form-select" aria-label="Default select example">
+            <select
+              name="operation"
+              class="form-select"
+              aria-label="Default select example"
+            >
               <option selected>Select</option>
               <option value="cpng">Conver to PNG</option>
               <option value="cjpg">Convert to JPG</option>
               <option value="cwebp">Convert to WebP</option>
-              <option value="cgary">Convert to GrayScale</option>
+              <option value="cgray">Convert to GrayScale</option>
             </select>
             <label for="floatingSelect">What to Do: </label>
           </div>
