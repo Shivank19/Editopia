@@ -17,30 +17,32 @@ Editopia is a Flask-based web application designed to provide users with powerfu
 
 Follow these steps to set up and run Editopia locally:
 
-1. **Clone the Repository:** Clone this repository to your local machine using the following command:
+1. **Clone the Repository:** Clone this repository to your local machine using the following command
    ```bash
    git clone https://github.com/your-username/Editopia.git
-2. **Create an environment:** Create virtual environment for the project:
+2. **Create an environment:** Create virtual environment for the project
    ```bash
     python -m venv name_of_environment
 3. **Activate the Environment:**
    ```bash
     name_of_environment\Scripts\activate
-4. **Install Dependencies:** Navigate to the project directory and install the required dependencies using:
+4. **Install Dependencies:** Navigate to the project directory and install the required dependencies using
    ```bash
    pip install -r requirements.txt
-5. **Run the App:** Start the Flask development server by running:
+5. **Run the App:** Start the Flask development server by running
    ```bash
    python main.py
 The app will be accessible at http://127.0.0.1:5000.
 
 ## Usage
 
-1. **Upload Image:** Click on the "Upload" button and select an image you want to edit.
+1. **Select Operation:** Select one of the operations available
 
-2. **Apply Edits:** Choose from the available editing options. Use the real-time preview to fine-tune your edits.
+2. **Upload an Image:** Click the "Upload" button to select an image from your device.
 
-3. **Save/Download:** Once satisfied with the changes, click on the "Save" button to download the edited image.
+3. **Process the Image:** After uploading an image, click the process button to process your image.
+
+3. **Save/Download:** View and download the edited image from the link given.
 
 ## Contributing
 
