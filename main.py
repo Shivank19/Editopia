@@ -56,6 +56,26 @@ def docs():
     return render_template("docs.html")
 
 
+@app.route("/grayscale")
+def gray():
+    return render_template("utils/gray.html")
+
+
+@app.route("/png")
+def png():
+    return render_template("utils/png.html")
+
+
+@app.route("/jpg")
+def jpg():
+    return render_template("utils/jpg.html")
+
+
+@app.route("/webp")
+def webp():
+    return render_template("utils/webp.html")
+
+
 @app.route("/edit", methods=["GET", "POST"])
 def edit():
     if request.method == "POST":
