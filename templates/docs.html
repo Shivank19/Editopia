@@ -1,58 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-  </head>
-  <body>
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Editopia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Editopia</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/docs">Documentation</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Tools
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/png">Convert to PNG</a></li>
+                            <li><a class="dropdown-item" href="/jpg">Convert to JPG</a></li>
+                            <li>
+                                <a class="dropdown-item" href="/webp">Convert to Webp</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/grayscale">Convert to Grayscale</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex" role="search">
+                    <button class="btn btn-outline-primary mx-2" type="submit">
+                        Login
+                    </button>
+                    <button class="btn btn-outline-primary mx-2" type="submit">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="main-section" class="container flex-grow-1">
+            <header class="pb-2 mt-4 mb-2 border-bottom">
+                <h1>Editopia Documentation</h1>
+            </header>
+            <h2>Introduction</h2>
+
+            <p class="lead">
+                Welcome to the documentation for Editopia, an image manipulation web
+                app powered by Flask and OpenCV. This documentation aims to provide
+                users and potential contributors with the necessary information to
+                understand, utilize, and contribute to the Editopia project.
+            </p>
+
+            <!-- <h3>Contents</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                  The current link item
+                </a>
+                <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                <a class="list-group-item list-group-item-action disabled" aria-disabled="true">A disabled link item</a>
+            </div> -->
+            <div id="table-of-contents">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li>
+                        <a href="#usage">Usage</a>
+                        <ul>
+                            <li><a href="#u0">Select Operation</a></li>
+                            <li><a href="#u1">Upload Image</a></li>
+                            <li><a href="#u2">Process Image</a></li>
+                            <li><a href="#u3">Save/Download</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#contribution">Contribution Guidelines</a>
+                        <ul>
+                            <li>
+                                <a href="#get-started">Getting Started</a>
+                            </li>
+                            <li>
+                                <a href="#contribute">Contributing</a>
+                            </li>
+                        </ul>
+                    <li><a href="#note">End Note</a></li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <!-- Features -->
+            <section id="features">
+                <h3>Features ✨</h3>
+                <ul>
+                    <li>
+                        <strong>Image Manipulation:</strong> Utilize OpenCV's robust
+                        features to perform various image manipulation tasks, including
+                        resizing, cropping, filtering, and more.
+                    </li>
+                    <li>
+                        <strong>User-Friendly Interface:</strong> Editopia comes with an
+                        intuitive web interface that makes it easy for users to upload,
+                        edit, and save images without any hassle.
+                    </li>
+                    <li>
+                        <strong>Real-time Preview:</strong> See the changes you make to
+                        your images in real-time before saving, ensuring you achieve the
+                        desired results.
+                    </li>
+                    <li>
+                        <strong>Download and Share:</strong> Download your edited images
+                        directly from the web app or share them on social media platforms.
+                    </li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <!-- Using -->
+            <section id="usage">
+                <h2>Start Using 💻</h2>
+                <h5 id="u0">1. Select an Operation</h5>
+                <figure class="rounded p-2">
+                    <img src="static/img/home.png" alt="Example diagram" class="border shadow-none rounded" width="900"
+                        height="400" />
+                    <figcaption class="d-flex font-italic">
+                        Select an Operation
+                    </figcaption>
+                </figure>
+
+                <h5 id="u1">2. Upload an Image</h5>
+                <figure class="rounded p-2">
+                    <img src="static/img/function.png" alt="Example diagram" class="border shadow-none rounded"
+                        width="900" height="400" />
+                    <figcaption class="d-flex font-italic">
+                        Click the "Upload" button to select an image from your device.
+                    </figcaption>
+                </figure>
+
+                <h5 id="u2">3. Process the Image</h5>
+                <figure class="rounded p-2">
+                    <img src="static/img/process.png" alt="Example diagram" class="border shadow-none rounded"
+                        width="900" height="400" />
+                    <figcaption class="d-flex font-italic">
+                        After uploading an image, click the process button to process your
+                        image.
+                    </figcaption>
+                </figure>
+
+                <h5 id="u">4. Save / Download Image</h5>
+                <figure class="rounded p-2">
+                    <img src="static/img/save.png" alt="Example diagram" class="border shadow-none rounded" width="900"
+                        height="400" />
+                    <figcaption class="d-flex font-italic">
+                        View and download the edited image from the link given.
+                    </figcaption>
+                </figure>
+                <p></p>
+            </section>
+
+            <hr>
+
+            <section id="contribution">
+                <h2>Contribution Guidelines 📝</h2>
+                <p>We welcome contributions from the community to enhance Editopia. Follow these steps to contribute:
+                </p>
+
+                <h4 id="get-started">Setting Up the Project 🧑🏽‍💻</h4>
+                <ul>
+                    <li>
+                        <h5>Fork the Repository</h5>
+                        <p>Click the "Fork" button on the GitHub repository to create your own fork.</p>
+                    </li>
+                    <li>
+                        <h5>Clone the Repository</h5>
+                        <p>Clone this repository to your local machine using the following command</p>
+                        <pre class="border shadow rounded"><code>git clone https://github.com/Shivank19/Editopia.git</code></pre>
+                    </li>
+                    <li>
+                        <h5>Create an environment</h5>
+                        <p>Create virtual environment for the project</p>
+                        <pre><code> python -m venv name_of_environment </code></pre>
+                    </li>
+                    <li>
+                        <h5>Activate Environment</h5>
+                        <pre><code>name_of_environment\Scripts\activate</code></pre>
+                    </li>
+                    <li>
+                        <h5>Install Dependencies</h5>
+                        <p>Navigate to the project directory and install the required dependencies using</p>
+                        <pre><code>pip install -r requirements.txt</code></pre>
+                    </li>
+                    <li>
+                        <h5>Run the App</h5>
+                        <p>Start the Flask development server by running</p>
+                        <pre><code>python main.py</code></pre>
+                        <p>The app will be accessible at http://127.0.0.1:5000.</p>
+                    </li>
+                </ul>
+
+                
+
+                <h4 id="contribute">Contributing 🫱🏼‍🫲🏼 </h4>
+                <ul>
+                    <li>
+                        <h5>Create a New Branch</h5>
+                        <p>Create a new branch for your feature or bugfix:</p>
+                        <pre><code>git checkout -b feature/new-feature</code></pre>
+                    </li>
+                    <li>
+                        <h5>Make Changes</h5>
+                        <p>Make your changes, commit them, and push to your branch:</p>
+                        <pre><code>git commit -m 'Add new feature'
+                                git push origin feature/new-feature
+                        </code></pre>
+                    </li>
+                    <li>
+                        <h5>Create a Pull Request</h5>
+                        <p>Submit a pull request from your branch to the main repository. Provide a detailed description of your
+                            changes.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <hr>
+
+            <section id="note">
+                <h2>End Note 🙏🏼</h2>
+                <p>By following this documentation, users can quickly get started with using Editopia, utilize its features, and contribute to its development. We encourage contributions and look forward to adding new features.</p>
+
+                <p>For more information, visit the <a href="https://github.com/Shivank19/Editopia" target="_blank" rel="noopener">Editopia GitHub Repository</a>.</p>
+
+                <p>If you have any questions or need further assistance, feel free to <a href="https://www.linkedin.com/in/shivank-sapra/" target="_blank" rel="noopener">Connect with Me</a>.</p>
+
+                Happy editing!
+            </section>
+
+            <hr>
+    </main>
     
-  <nav class="bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="/" class="flex items-center">
-        <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" /> -->
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Editopia</span>
-    </a>
-    <button data-collapse-toggle="navbar-dropdown" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-dropdown" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-    </button>
-    <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
-      <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        <li>
-          <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent" aria-current="page">Home</a>
-        </li>
-        <li>
-          <a href="/about" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-        </li>
-        <li>
-          <a href="/docs" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Documentation</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  </nav>
+    <footer class="footer w-100 pt-2 border-top bg-light">
+        <div id="footer-nav" class="bg-light container">
+            <div id="navbar-footer" class="row">
+                <div class="col">
+                    <dl class="text-center mb-1">
+                        <dt class="border-bottom">General Info</dt>
+                        <dd><a href="#">Acquire</a></dd>
+                        <dd><a href="#">Getting Started</a></dd>
+                        <dd><a href="#">Changes Log</a></dd>
+                    </dl>
+                </div>
+                <div class="col">
+                    <dl class="text-center mb-1">
+                        <dt class="border-bottom">Code</dt>
+                        <dd>
+                            <a id="scm-link" href="https://github.com/Bernardo-MG/docs-bootstrap-template"
+                                class="link-noted">SCM <span class="note">GitHub</span></a>
+                        </dd>
+                        <dd>
+                            <a id="ci-link" href="https://github.com/Bernardo-MG/docs-bootstrap-template/actions"
+                                class="link-noted">CI <span class="note">Github Workflow</span></a>
+                        </dd>
+                        <dd>
+                            <a id="issues-link" href="https://github.com/Bernardo-MG/docs-bootstrap-template/issues"
+                                class="link-noted">Issues <span class="note">GitHub</span></a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col">
+                    <dl class="text-center mb-1">
+                        <dt class="border-bottom">Releases</dt>
+                        <dd><a href="#">Maven Central</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div id="footer-info" class="bg-light ps-2 pb-1 w-100">
+            <div>
+                <span class="fa-regular fa-copyright"></span>2015-2022
+                <a id="author-link" href="https://github.com/Bernardo-MG">Bernardo Martínez Garrido</a>
+                -
+                <a id="license-link" href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>
+            </div>
+            <div>
+                Powered by
+                <a href="http://www.w3schools.com/html/html5_intro.asp">HTML5</a> and
+                <a href="http://getbootstrap.com/">Bootstrap</a>
+            </div>
+        </div>
+    </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
 
-    <h1 class="text-3xl mt-8 mb-5 text-center">Documentation</h1>
-    
-    <p class="my-5 text-lg max-w-4xl mx-auto text-justify">
-      Editopia is a Flask-based web application designed to provide users with powerful image manipulation capabilities using OpenCV. Whether you're a developer, designer, or simply someone looking to enhance your images, Editopia offers a user-friendly interface for a wide range of image editing tasks.
-    </p>
-    <hr>
-
-    <h1 class="text-3xl text-center">Features</h1>
-    <p>
-      <ul class="list-disc list-inside my-5 pl-2">
-        <li class="max-w-4xl mx-auto"><strong>Image Manipulation: </strong>Utilize OpenCV's robust features to perform various image manipulation tasks, including resizing, cropping, filtering, and more.</li>
-        <li class="max-w-4xl mx-auto"><strong>User-Friendly Interface: </strong>Editopia comes with an intuitive web interface that makes it easy for users to upload, edit, and save images without any hassle.</li>
-        <li class="max-w-4xl mx-auto"><strong>Real-time Preview: </strong>See the changes you make to your images in real-time before saving, ensuring you achieve the desired results.</li>
-        <li class="max-w-4xl mx-auto"><strong>Download and Share: </strong>Download your edited images directly from the web app or share them on social media platforms.</li>
-      </ul>
-    </p>
-  </body>
 </html>
