@@ -52,7 +52,7 @@ Contributions are welcome from the community! To contribute to Editopia, follow 
 
 2. Create a new branch for your feature/bugfix: `git checkout -b feature/new-feature`.
 
-3. Commit your changes: `git commit -am 'Add new feature'`.
+3. Commit your changes: `git commit -m 'Add new feature'`.
 
 4. Push to the branch: `git push origin feature/new-feature`.
 
