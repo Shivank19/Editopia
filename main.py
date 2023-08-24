@@ -76,6 +76,16 @@ def webp():
     return render_template("utils/webp.html")
 
 
+@app.route("/compress")
+def compress():
+    return render_template("utils/compress.html")
+
+
+@app.route("/watermark")
+def watermark():
+    return render_template("utils/watermark.html")
+
+
 @app.route("/edit", methods=["GET", "POST"])
 def edit():
     if request.method == "POST":

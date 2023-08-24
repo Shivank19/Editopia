@@ -10,13 +10,36 @@
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: linen;
+        font-family: 'Merriweather', serif;
+      }
+      hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.75),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .card-img-top{
+        background-size: 50px;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
-          <img src="../static/img/logo.png" alt="logo" width="75" height="75" />
+          <img src="../static/img/logotxt2.png" alt="logo" width="150" />
         </a>
         <button
           class="navbar-toggler"
@@ -61,16 +84,19 @@
                     >Convert to Grayscale</a
                   >
                 </li>
+                <li>
+                  <a class="dropdown-item" href="/compress"
+                    >Compress Image</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/watermark"
+                    >Add Watermark</a
+                  >
+                </li>
               </ul>
             </li>
           </ul>
-          <div class="d-flex" role="search">
-            <button class="btn btn-outline-primary mx-2" type="submit">
-              Login
-            </button>
-            <button class="btn btn-outline-primary mx-2" type="submit">
-              Sign Up
-            </button>
           </div>
         </div>
       </div>
@@ -89,6 +115,105 @@
       ></button>
     </div>
     {% endfor %} {% endif %} {% endwith %}
+
+    <h3 class="text-center" style="font-weight: 700; font-size: 3rem">
+      <img
+        src="../static/img/logoImg.png"
+        alt="logo"
+        width="150"
+        height="150"
+      />
+      <br />
+      EDITOPIA
+      <br />
+      <h5 class="text-body-secondary text-center">
+        Elevate Your Images: Transform and Enhance with Our Powerful Image
+        Manipulation Suite!
+      </h5>
+    </h3>
+    <hr />
+    <br />
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/img/cards/png.png" class="card-img-top" alt="png"/>
+            <div class="card-body">
+              <h5 class="card-title">Convert to PNG</h5>
+              <p class="card-text">
+                Convert to PNG
+              </p>
+              <a href="#" class="btn btn-primary">Convert to PNG</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/img/cards/jpg.png" class="card-img-top" alt="jpg" />
+            <div class="card-body">
+              <h5 class="card-title">Convert to JPG</h5>
+              <p class="card-text">
+                Convert to JPG
+              </p>
+              <a href="jpg" class="btn btn-primary">Convert to JPG</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" >
+          <div class="card">
+            <img src="../static/img/cards/gray.png" class="card-img-top" alt="gray" />
+            <div class="card-body">
+              <h5 class="card-title">Convert to Grayscale</h5>
+              <p class="card-text">
+                Convert to Grayscale
+              </p>
+              <a href="/grayscale" class="btn btn-primary">Convert to Grayscale</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <br>
+      
+      <div class="row gy-3">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/img/cards/webp.png" class="card-img-top" alt="webp" />
+            <div class="card-body">
+              <h5 class="card-title">Convert to WebP</h5>
+              <p class="card-text">
+                Convert image frorm any format to WebP.
+              </p>
+              <a href="#" class="btn btn-primary">Convert to WebP</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/img/cards/compress.png" class="card-img-top" alt="compress" />
+            <div class="card-body">
+              <h5 class="card-title">Compress Images</h5>
+              <p class="card-text">
+                Compress images easily while maintaining quality.
+              </p>
+              <a href="/compress" class="btn btn-primary">Compress</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="../static/img/cards/stamp.png" class="card-img-top" alt="watermark" />
+            <div class="card-body">
+              <h5 class="card-title">Watermark</h5>
+              <p class="card-text">
+                Add watermarks to your images easily.
+              </p>
+              <a href="/watermark" class="btn btn-primary">Add Watermark</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
