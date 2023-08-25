@@ -39,7 +39,62 @@ def processImage(filename, operation):
             newFilename = f"static/{filename.split('.')[0]}.png"
             cv2.imwrite(newFilename, img)
             return newFilename
+        case "watermark":
+            if request.method == "POST":
+                if 'watermark' not in request.files:
+                    flash('No Watermark part')
+                    return "Error"
+                watermark = request.files['watermark']
 
+                if watermark.filename == '':
+                    flash('No selected watermark')
+                    return "Error: No watermark selected"
+                if watermark and allowed_file(watermark.filename):
+                    watermarkname = secure_filename(
+                        watermark.filename)  # type: ignore
+                    watermark.save(os.path.join(
+                        app.config['UPLOAD_FOLDER'], watermarkname))
+                    wm = cv2.imread(f"uploads/{watermarkname}")
+
+                    h_img, w_img = img.shape[:2]
+                    h_wm, w_wm = wm.shape[:2]
+
+                    center_x = int(w_img/2)
+                    center_y = int(h_img/2)
+
+                    top_y = center_y - int(h_wm/2)
+                    left_x = center_x - int(w_wm/2)
+                    bottom_y = top_y + h_wm
+                    right_x = left_x + w_wm
+
+                    roi = img[top_y:bottom_y, left_x:right_x]
+                    result = cv2.addWeighted(roi, 1, wm, 0.3, 0)
+                    img[top_y:bottom_y, left_x:right_x] = result
+
+                    newFilename = f"static/{filename.split('.')[0]}.png"
+                    cv2.imwrite(newFilename, img)
+                    return newFilename
+        case "blur":
+            newFilename = f"static/{filename.split('.')[0]}.png"
+            img = cv2.GaussianBlur(img, (45, 45), 15)
+            cv2.imwrite(newFilename, img)
+            return newFilename
+        case "resize":
+            newFilename = f"static/{filename.split('.')[0]}.png"
+            if request.method == "POST":
+                perc = request.form.get("resize")
+                height, width, channels = img.shape
+                sizePerc = int(perc) / 100  # type: ignore
+                new_width = int(width * sizePerc)
+                new_height = int(height * sizePerc)
+                resized_img = cv2.resize(img, (new_width, new_height))
+                cv2.imwrite(newFilename, resized_img)
+                return newFilename
+        case "edge":
+            newFilename = f"static/{filename.split('.')[0]}.png"
+            edges = cv2.Canny(img, 50, 150)
+            cv2.imwrite(newFilename, edges)
+            return newFilename
 
 @app.route("/")
 def home():
@@ -76,14 +131,22 @@ def webp():
     return render_template("utils/webp.html")
 
 
-@app.route("/compress")
-def compress():
-    return render_template("utils/compress.html")
-
-
 @app.route("/watermark")
 def watermark():
     return render_template("utils/watermark.html")
+
+
+@app.route("/blur")
+def blur():
+    return render_template("utils/blur.html")
+
+@app.route("/resize")
+def resize():
+    return render_template("utils/resize.html")
+
+@app.route("/edge")
+def edge():
+    return render_template("utils/edge.html")
 
 
 @app.route("/edit", methods=["GET", "POST"])

@@ -37,14 +37,15 @@
           >
           <input class="form-control" type="file" name="file" id="formFile" />
 
-          <label for="formWatermark" class="form-label"
-            >Select Watermark Image</label
+          <br />
+          <label for="formResize" class="form-label"
+            >Specify Percentage (1-100)</label
           >
           <input
             class="form-control"
-            type="file"
-            name="watermark"
-            id="formWatermark"
+            type="number"
+            name="resize"
+            id="formResize"
           />
         </div>
         <div class="mb-3">
@@ -54,7 +55,7 @@
               class="form-select"
               aria-label="Default select example"
             >
-              <option value="watermark" selected>Convert to Grayscale</option>
+              <option value="resize" selected>Resize Image</option>
             </select>
             <label for="floatingSelect">Operation: </label>
           </div>

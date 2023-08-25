@@ -13,7 +13,6 @@
   </head>
   <body>
     <!-- Navbar -->
-    
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %}
@@ -34,7 +33,7 @@
       <form action="/edit" method="post" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="formFile" class="form-label"
-            >Select in Image to Edit</label
+            >Sharpen Image</label
           >
           <input class="form-control" type="file" name="file" id="formFile" />
         </div>
@@ -45,7 +44,7 @@
               class="form-select"
               aria-label="Default select example"
             >
-              <option value="cgray" selected>Convert to Grayscale</option>
+              <option value="sharp" selected>Sharpen Image</option>
             </select>
             <label for="floatingSelect">Operation: </label>
           </div>
