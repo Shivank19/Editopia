@@ -73,7 +73,7 @@
               >
                 Tools
               </a>
-              <ul class="dropdown-menu">
+              <ol class="dropdown-menu">
                 <li><a class="dropdown-item" href="/png">Convert to PNG</a></li>
                 <li><a class="dropdown-item" href="/jpg">Convert to JPG</a></li>
                 <li>
@@ -82,11 +82,6 @@
                 <li>
                   <a class="dropdown-item" href="/grayscale"
                     >Convert to Grayscale</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item" href="/blur"
-                    >Blur Image</a
                   >
                 </li>
                 <li>
@@ -99,7 +94,22 @@
                     >Add Watermark</a
                   >
                 </li>
-              </ul>
+                <li>
+                  <a class="dropdown-item" href="/blur"
+                    >Blur Image</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/edge"
+                    >Detect Edges</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/sharp"
+                    >Sharpen Image</a
+                  >
+                </li>
+              </ol>
             </li>
           </ul>
           </div>
@@ -139,9 +149,10 @@
     <hr />
     <br />
     <div class="container">
+      
       <div class="row gy-3">
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
             <img src="../static/img/cards/png.png" class="card-img-top" alt="png"/>
             <div class="card-body">
               <h5 class="card-title">Convert to PNG</h5>
@@ -152,8 +163,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
             <img src="../static/img/cards/jpg.png" class="card-img-top" alt="jpg" />
             <div class="card-body">
               <h5 class="card-title">Convert to JPG</h5>
@@ -164,8 +175,20 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4" >
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
+            <img src="../static/img/cards/webp.png" class="card-img-top" alt="webp" />
+            <div class="card-body">
+              <h5 class="card-title">Convert to WebP</h5>
+              <p class="card-text">
+                Convert image to WebP.
+              </p>
+              <a href="#" class="btn btn-primary">Convert to WebP</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3" >
+          <div class="card w-100">
             <img src="../static/img/cards/gray.png" class="card-img-top" alt="gray" />
             <div class="card-body">
               <h5 class="card-title">Convert to Grayscale</h5>
@@ -175,14 +198,14 @@
               <a href="/grayscale" class="btn btn-primary">Convert to Grayscale</a>
             </div>
           </div>
-        </div>
+        </div>    
       </div>
       
       <br>
       
       <div class="row gy-3">
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
             <img src="../static/img/cards/compress.png" class="card-img-top" alt="resize" />
             <div class="card-body">
               <h5 class="card-title">Resize Images</h5>
@@ -192,20 +215,8 @@
               <a href="/resize" class="btn btn-primary">Resize</a>
             </div>
           </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../static/img/cards/webp.png" class="card-img-top" alt="webp" />
-            <div class="card-body">
-              <h5 class="card-title">Convert to WebP</h5>
-              <p class="card-text">
-                Convert image frorm any format to WebP.
-              </p>
-              <a href="#" class="btn btn-primary">Convert to WebP</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
+        </div>      
+        <div class="col-md-3">
           <div class="card">
             <img src="../static/img/cards/stamp.png" class="card-img-top" alt="watermark" />
             <div class="card-body">
@@ -217,13 +228,8 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <br>
-
-      <div class="row gy-3">
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
             <img src="../static/img/cards/blur.png" class="card-img-top" alt="blur" />
             <div class="card-body">
               <h5 class="card-title">Blur</h5>
@@ -234,8 +240,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
+        <div class="col-md-3">
+          <div class="card w-100">
             <img src="../static/img/cards/edge.png" class="card-img-top" alt="edge" />
             <div class="card-body">
               <h5 class="card-title">Detect Edges</h5>
@@ -246,15 +252,20 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <img src="../static/img/cards/edge.png" class="card-img-top" alt="edge" />
+      </div>
+
+      <br>
+
+      <div class="row gy-3">
+        <div class="col-md-3">
+          <div class="card w-100">
+            <img src="../static/img/cards/sharp4.png" class="card-img-top" alt="sharp"/>
             <div class="card-body">
-              <h5 class="card-title">Detect Edges</h5>
+              <h5 class="card-title">Sharpen Image</h5>
               <p class="card-text">
-                Detect Edges
+                Sharpen Image
               </p>
-              <a href="/edge" class="btn btn-primary">Detect Edges</a>
+              <a href="/sharp" class="btn btn-primary">Sharpen Image</a>
             </div>
           </div>
         </div>

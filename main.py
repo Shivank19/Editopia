@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, flash
 from werkzeug.utils import secure_filename
 import os
 import cv2
+import numpy as np
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'webp'}
@@ -95,6 +96,13 @@ def processImage(filename, operation):
             edges = cv2.Canny(img, 50, 150)
             cv2.imwrite(newFilename, edges)
             return newFilename
+        case "sharp":
+            newFilename = f"static/{filename.split('.')[0]}.png"
+            kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
+            sharpened = cv2.filter2D(img, -1, kernel)
+            cv2.imwrite(newFilename, sharpened)
+            return newFilename
+
 
 @app.route("/")
 def home():
@@ -140,13 +148,20 @@ def watermark():
 def blur():
     return render_template("utils/blur.html")
 
+
 @app.route("/resize")
 def resize():
     return render_template("utils/resize.html")
 
+
 @app.route("/edge")
 def edge():
     return render_template("utils/edge.html")
+
+
+@app.route("/sharp")
+def sharp():
+    return render_template("utils/sharp.html")
 
 
 @app.route("/edit", methods=["GET", "POST"])
@@ -175,4 +190,5 @@ def edit():
     return render_template("index.html")
 
 
-app.run(debug=True)
+app.run(host="0.0.0.0", port=5000)
+# app.run(debug=True)
