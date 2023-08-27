@@ -14,29 +14,16 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        background-color: linen;
-        font-family: 'Merriweather', serif;
-      }
-      hr {
-        border: 0;
-        height: 1px;
-        background-image: linear-gradient(
-          to right,
-          rgba(0, 0, 0, 0),
-          rgba(0, 0, 0, 0.75),
-          rgba(0, 0, 0, 0)
-        );
-      }
-      .card-img-top{
-        background-size: 50px;
-      }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/x-icon" href="../static/img/favicon.ico">
+
+    <link rel="stylesheet" href="../static/css/style.css">
+    
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary opacity-75">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">
           <img src="../static/img/logotxt2.png" alt="logo" width="150" />
@@ -117,9 +104,11 @@
       </div>
     </nav>
 
+
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+    <div class="alert alert-success alert-dismissible fade show opacity-75" role="alert">
       <strong>Success, Your Image has been Processed!</strong> {{ message | safe
       }}
       <button
@@ -130,7 +119,11 @@
       ></button>
     </div>
     {% endfor %} {% endif %} {% endwith %}
-
+    
+    <br>
+    <br>
+    <br>
+    
     <h3 class="text-center" style="font-weight: 700; font-size: 3rem">
       <img
         src="../static/img/logoImg.png"
@@ -147,14 +140,18 @@
       </h5>
     </h3>
     <hr />
+
     <br />
-    <div class="container">
+    
+    <!-- Main Body -->
+    <div class="text-center container">
       
       <div class="row gy-3">
-        <div class="col-md-3">
-          <div class="card w-100">
+        <div class="col-md-3 ">
+          <div class="card w-100 ">
             <img src="../static/img/cards/png.png" class="card-img-top" alt="png"/>
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Convert to PNG</h5>
               <p class="card-text">
                 Convert to PNG
@@ -167,6 +164,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/jpg.png" class="card-img-top" alt="jpg" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Convert to JPG</h5>
               <p class="card-text">
                 Convert to JPG
@@ -179,6 +177,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/webp.png" class="card-img-top" alt="webp" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Convert to WebP</h5>
               <p class="card-text">
                 Convert image to WebP.
@@ -191,6 +190,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/gray.png" class="card-img-top" alt="gray" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Convert to Grayscale</h5>
               <p class="card-text">
                 Convert to Grayscale
@@ -208,6 +208,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/resize.png" class="card-img-top" alt="resize" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Resize Images</h5>
               <p class="card-text">
                 Resize images easily while maintaining quality.
@@ -220,9 +221,10 @@
           <div class="card">
             <img src="../static/img/cards/watermark.png" class="card-img-top" alt="watermark"/>
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Watermark</h5>
               <p class="card-text">
-                Add watermarks to your images easily.
+                Add watermarks to your images.
               </p>
               <a href="/watermark" class="btn btn-primary">Add Watermark</a>
             </div>
@@ -232,6 +234,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/blur.png" class="card-img-top" alt="blur" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Blur</h5>
               <p class="card-text">
                 Blur
@@ -244,6 +247,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/edge.png" class="card-img-top" alt="edge" />
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Detect Edges</h5>
               <p class="card-text">
                 Detect Edges
@@ -261,6 +265,7 @@
           <div class="card w-100">
             <img src="../static/img/cards/sharp.png" class="card-img-top" alt="sharp"/>
             <div class="card-body">
+              <hr class="opacity-75" />
               <h5 class="card-title">Sharpen Image</h5>
               <p class="card-text">
                 Sharpen Image
@@ -271,6 +276,134 @@
         </div>
       </div>
     </div>
+  <!-- Main Body -->
+    <br>
+    <br>
+
+  <!-- Footer -->
+  <footer
+    class="text-center text-lg-start text-white opacity-75"
+    style="background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+           font-size: 15px; 
+           border-radius: 50px 50px 0 0";
+  >
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between"> </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold h4">Editopia</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Editopia is a Flask-based web application designed to provide users with image manipulation capabilities using OpenCV. 
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold h4">Services</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="/png" class="text-white sLink">Convert to PNG</a>
+            </p>
+            <p>
+              <a href="/grayscale" class="text-white sLink">Convert to Grayscale</a>
+            </p>
+            <p>
+              <a href="/sharp" class="text-white sLink">Sharpen Image</a>
+            </p>  
+            <p>
+              <a href="/watermark" class="text-white sLink">Add Watermark</a>
+            </p>
+            <p>
+              <a href="/" class="text-white sLink">More...</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold h4">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="/" class="text-white sLink">Home</a>
+            </p>
+            <p>
+              <a href="/about" class="text-white sLink">About</a>
+            </p>
+            <p>
+              <a href="/docs" class="text-white sLink">Documentation</a>
+            </p>
+            <p>
+              <a href="https://github.com/Shivank19/Editopia" target="_blank" rel="noopener" class="text-white sLink">Open Source</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold h4">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+                <p>
+                  <a href="https://www.linkedin.com/in/shivank-sapra/" aria-label="LinkedIn" target="_blank" rel="noopener" class="text-white me-5 fLink">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="https://github.com/Shivank19" aria-label="GitHub" class="text-white me-5 fLink">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </p>
+                <p>
+                  <a href="mailto:shivank.sapra@gmail.com" aria-label="EMail" class="text-white me-5 fLink">
+                    <i class="fas fa-envelope"></i>
+                  </a>
+                  <a href="https://twitter.com/ShSap19" aria-label="Twitter" class="text-white me-5 fLink">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </p>  
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2023 Copyright:
+      <a class="text-white" href="https://shivanksapra.netlify.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; font-weight: normal;">
+        Shivank Sapra
+      </a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
