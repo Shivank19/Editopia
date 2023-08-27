@@ -1,5 +1,5 @@
 # Editopia
-
+[![Render](https://img.shields.io/badge/Go%20to%20Website-%46E3B7.svg?logo=render&logoColor=white)](https://editopia-2dra.onrender.com/)
 
 Editopia is a Flask-based web application designed to provide users with powerful image manipulation capabilities using OpenCV. Whether you're a developer, designer, or simply someone looking to enhance your images, Editopia offers a user-friendly interface for a wide range of image editing tasks.
 
